@@ -22,7 +22,7 @@ class HtointCommand(sublime_plugin.EventListener):
 			if not word.empty():
 
 				keyword = view.substr(word)
-				isHex = re.findall(r'0x[0-9a-fA-F]+', keyword)
+				isHex = re.findall(r'$[0-9a-fA-F]+', keyword)
 
 				if isHex:
 					statusline.append('{} -> {}'.format(isHex[0], self.str_to_int(isHex[0])))
